@@ -12,15 +12,16 @@ network_tensor_data/
 paraproduct_experiments/
 questionnaire_experiments/
 softmax_attn/
-paraproduct_attent.m
+txl_attn_datav2/
 
 # files with specific extensions to ignore
 *.npy
 *.pkl
+*.pth
 
 #specific files
 playground.ipynb
-
+paraproduct_atten.m
 
 
 
