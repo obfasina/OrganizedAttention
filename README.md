@@ -14,3 +14,14 @@ The 3D questionnaire algorithm is used for network 3-tensor organization; one ca
 NOTES: 
 a) The questionnaire algorithm used here was originally implemented by Ankenmann/Mishne
 b) For the transformer-xl attention head generation, we only include the scripts modified from the original transformer-xl model
+
+# Requirements
+
+All packages required to run 'network_inference.py' can be found in the /src/network_inference.yml file
+
+# How to run
+
+We have provided a script that generates the l1 entropy of the input network and an object containing the diffusion coordinates, the location of the query, key and head indeces in each tree axis, and pair-wise affinities on the space of queries,keys, and heads.
+
+The script can be found in /src and is run with 'python /path/to/data'. One can also optionally specify the number of tensor basis vectors used to compute the l_1 entropy of the network. This option is specified as 'python /path/to/data --nbas k' where k is the number of desired basis vectors (it is an optional argument, the default value is 10) .
+
