@@ -1,3 +1,5 @@
+
+# Data folders
 3Dquestmat/
 attn_data/
 attenhead_decomp/
@@ -12,8 +14,12 @@ questionnaire_experiments/
 softmax_attn/
 paraproduct_attent.m
 
+# files with specific extensions to ignore
+*.npy
+*.pkl
 
-
+#specific files
+playground.ipynb
 
 
 
