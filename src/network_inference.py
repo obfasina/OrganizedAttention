@@ -36,17 +36,24 @@ orgobj.init_quest_params(iralph,irbeta,icalph,icbeta,idalph,idbeta,initers)
 orgobj.run_quest()
 orgobj.run_diffusion()
 
+x = np.expand_dims(orgobj.firstvec,axis=1)
+y = np.expand_dims(orgobj.secondvec,axis=1)
+z = np.expand_dims(orgobj.thirdvec,axis=1)
+headcoords = np.concatenate((x,y,z),axis=1)
+headkernel = orgobj.chan_aff
 
-# Step 2) Save qualitative results
+print("coordinate shape:",headcoords.shape)
 
-#qualdict = {'diff_coord':orgobj,'head_affinity':orgobj.chan_aff}
-with open("network_obj.pkl", "wb") as f:
-    pickle.dump(orgobj, f)
+# Step 2) Save results
 
-# Step 3) Save quantitative results
 
 topk = args.nbas
+entp = 0
 entp = np.sum(orgobj.compute_ntwk_entp(topk))
+headentropies = orgobj.qkentp
+qualdict = {'diff_coord':headcoords,'head_affinity':headkernel,'head_entropies':orgobj.qkentp}
+with open("network_obj.pkl", "wb") as f:
+    pickle.dump(qualdict, f)
 print(f"The l1 entropy of the network computed with the top {topk} tensor basis vectors is: {entp}")
 
 
