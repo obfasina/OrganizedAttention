@@ -19,7 +19,13 @@ All packages required to run 'network_inference.py' can be found in the /src/net
 
 # How to run
 
-We have provided a script which generates the l1 entropy of the input network and an object containing the diffusion coordinates, the location of the query, key and head indeces in each tree axis, and pair-wise affinities on the space of queries,keys, and heads.
+We provide a script which generates:
+- the l1 entropies of each of the attention heads for the input network (admited by query-key tensor basis) and the network entropies (admitted by query-key-head tensor basis)
+- the diffusion coordinate
+- pair-wise affinities on the space of queries,keys, and heads.
 
-The script can be found in /src and is run with: 'python /path/to/data'.One can also optionally specify the number of tensor basis vectors used to compute the l_1 entropy of the network. This option can be run with: 'python /path/to/data --nbas k' where k is the number of desired basis vectors (it is an optional argument, the default value is 10).
+The script can be found in the /src directory and can be run with:
+**'python network_inference.py /path/to/data'**.
+One can also optionally specify the number of tensor basis vectors used to compute the l_1 entropy of the network. 
+This can be run in the CLI with: **'python network_inference.py /path/to/data --nbas k'** where k is the number of desired basis vectors (it is an optional argument, the default value is 10).
 
