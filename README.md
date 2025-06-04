@@ -21,7 +21,7 @@ All packages required to run 'network_inference.py' can be found in the /src/net
 
 We provide a script which generates:
 - the l1 entropies of each of the attention heads for the input network (admited by query-key tensor basis) and the network entropies (admitted by query-key-head tensor basis)
-- the diffusion coordinate
+- the diffusion coordinates
 - pair-wise affinities on the space of queries,keys, and heads.
 
 The script can be found in the /src directory and can be run with:
